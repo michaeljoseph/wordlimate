@@ -1,3 +1,6 @@
+build:
+    docker build -t wordlimate .
+
 test:
     poetry run pytest
 
