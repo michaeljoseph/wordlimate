@@ -7,7 +7,7 @@ repos:
       - id: mixed-line-ending
       - id: check-byte-order-marker
       - id: check-merge-conflict
-  - repo: https://gitlab.com/pycqa/flake8
+  - repo: https://github.com/pycqa/flake8
     rev: 3.9.2
     hooks:
       - id: flake8
