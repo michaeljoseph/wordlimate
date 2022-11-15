@@ -5,6 +5,10 @@ description = "wordle assistant"
 authors = ["Michael Joseph <michaeljoseph+github@gmail.com>"]
 readme = "README.md"
 
+packages = [
+    { include = "wordlimate", from = "src" },
+]
+
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.87.0"
