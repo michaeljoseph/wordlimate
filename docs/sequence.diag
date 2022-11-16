@@ -1,0 +1,10 @@
+seqdiag {
+  browser  -> wordlimate [label = "POST /{yyyy-mm-dd}/start"];
+  browser <-- wordlimate [label = "uuid, game_id"];
+
+  browser  -> wordle [label = "Make guess and get feedback"];
+  wordle <-- browser;
+
+  browser  -> wordlimate [label = "POST /{yyyy-mm-dd}/{uuid}/feedback {guess, result}"];
+  browser <-- wordlimate [label = "candidate words to try"];
+}
