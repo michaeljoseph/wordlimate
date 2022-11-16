@@ -1,0 +1,37 @@
+name: Test and Lint
+on:
+  push:
+    branches: [ main ]
+    tags: [ "*" ]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test-and-lint:
+    name: Test and Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.11"
+      - uses: extractions/setup-just@v1
+
+      - name: Lint and run tests
+        run: |
+          python -m pip install poetry
+          poetry install
+          just lint test
+
+  docker-build:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false

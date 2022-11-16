@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "wordlimate"
+version = "0.1.0"
+description = "wordle assistant"
+authors = ["Michael Joseph <michaeljoseph+github@gmail.com>"]
+readme = "README.md"
+
+packages = [
+    { include = "wordlimate", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.87.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+pre-commit = "^2.20.0"
+just = "^0.8.150"
+black = "^22.10.0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
