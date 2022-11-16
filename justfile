@@ -4,6 +4,9 @@ build:
 test:
     poetry run pytest
 
+watch-tests:
+    poetry run ptw
+
 lint:
     poetry run pre-commit run --all
 
