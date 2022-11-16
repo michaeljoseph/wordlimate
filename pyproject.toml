@@ -20,6 +20,7 @@ pre-commit = "^2.20.0"
 just = "^0.8.150"
 black = "^22.10.0"
 isort = "^5.10.1"
+pytest-watch = "^4.2.0"
 
 [build-system]
 requires = ["poetry-core"]
